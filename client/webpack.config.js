@@ -13,7 +13,19 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
-      }
+      },
+      {
+               test: /\.(png|svg|jpg|gif)$/,
+                 use: [
+                   'file-loader'
+                ]
+      },
+      {
+                 test: /\.(woff|woff2|eot|ttf|otf)$/,
+                 use: [
+                   'file-loader'
+                 ]
+               }
     ]
   },
   resolve: {
@@ -28,7 +40,6 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
-      filename: "./src/index.html"
      
     })
   ],
