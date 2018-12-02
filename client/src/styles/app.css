@@ -16,6 +16,15 @@ h1 {
 	width: 10rem;
 }
 
+perspective-viewer {
+    position: absolute !important;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
 .flyout {
 	display:flex;
 	flex-direction: column;

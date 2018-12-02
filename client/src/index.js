@@ -5,4 +5,4 @@ import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 
- ReactDOM.render(<App />, document.getElementById("app"));
+ ReactDOM.render(<App title="Risk Ui.." />, document.getElementById("app"));

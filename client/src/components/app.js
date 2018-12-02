@@ -1,88 +1,40 @@
 import React, { Component } from "react";
-'use-strict'
 import '../styles/app.css';
+import '../plainJs/streaming.js'
+//import "@jpmorganchase/perspective";
+ //import "@jpmorganchase/perspective-viewer-hypergrid";
+import "@jpmorganchase/perspective-viewer/build/material.dark.css";
+import CssBaseline from '@material-ui/core/CssBaseline'
+import { withStyles , createMuiTheme} from '@material-ui/core/styles';
+import {Grid} from "./grid.js";
 
-
-
-//import { Col, Container, Row, Footer } from "mdbreact";
-// class App extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state ={
-//       isLeftOpen: false,
-//       isRightOpen: false
-//     };
-//   }
-
-// // Slide out buttons event handlers
-//   handleToggleClickA = () => {
-//     this.setState({
-//       isLeftOpen: !this.state.isLeftOpen
-//     })
-//   }
-//   handleToggleClickB = () => {
-//     this.setState({
-//       isRightOpen: !this.state.isRightOpen
-//     })
-//   }
-
-//   render() {
-//    return(
-
-//     <Footer color="blue" className="font-small pt-4 mt-4">
-//   <Container fluid className="text-center text-md-left">
-//     <Row>
-//       <Col md="6">
-//       <h5 className="title">Footer Content</h5>
-//       <p>
-//         Here you can use rows and columns here to organize your footer
-//         content.
-//       </p>
-//       </Col>
-//       <Col md="6">
-//       <h5 className="title">Links</h5>
-//       <ul>
-//         <li className="list-unstyled">
-//           <a href="#!">Link 1</a>
-//         </li>
-//         <li className="list-unstyled">
-//           <a href="#!">Link 2</a>
-//         </li>
-//         <li className="list-unstyled">
-//           <a href="#!">Link 3</a>
-//         </li>
-//         <li className="list-unstyled">
-//           <a href="#!">Link 4</a>
-//         </li>
-//       </ul>
-//       </Col>
-//     </Row>
-//   </Container>
-//   <div className="footer-copyright text-center py-3">
-//     <Container fluid>
-//       &copy; {new Date().getFullYear()} Copyright:{" "}
-//       <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
-//     </Container>
-//   </div>
-// </Footer>
-
-    
-//    )
-   
-//    ;
-//   }
-// }
-
-
-
+// const theme= createMuiTheme(
+//     {
+//         palette: {
+//           primary: {
+//             main: '#4527a0',
+//           },
+//           secondary: deepPurple,
+//         },
+//       }
+// );
 
 class App extends Component {
+
+    constructor(props) {
+        super(props);
+      }
+
     render() {
-        return (
+        return(
+           <React.Fragment>
+               <CssBaseline />
             <div>
-                <h1>Risk UI..</h1>
+                <h1>{this.props.title}</h1>
+                <perspective-viewer row-pivots='["name"]' column-pivots='["client"]' columns='["chg","vol"]'></perspective-viewer>
             </div>
-        );
+            </React.Fragment>
+            );
     }
 }
 
